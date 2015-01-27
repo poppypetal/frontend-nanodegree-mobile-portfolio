@@ -1,0 +1,3 @@
+Resources:
+https://developer.chrome.com/devtools/docs/timeline
+https://developer.chrome.com/devtools/docs/rendering-settings
