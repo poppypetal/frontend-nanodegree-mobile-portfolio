@@ -1,3 +1,16 @@
 Resources:
 https://developer.chrome.com/devtools/docs/timeline
+
 https://developer.chrome.com/devtools/docs/rendering-settings
+
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#minification-preprocessing--context-specific-optimizations
+
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#text-compression-with-gzip
+
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
+
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=en
+
+http://cssminifier.com/
+
+Caching--http://drupal.stackexchange.com/questions/87409/expiration-date-for-static-files
