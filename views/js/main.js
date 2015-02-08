@@ -451,16 +451,15 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
 function changePizzaSizes(size) {
-  //moved two variables outside the for loop because their values do not change
+//created var pizzaContain to replace all instances of document.querySelectorAll(".randomPizzaContainer") since the same portion of code was used in 4 instances within the function
   var pizzaContain = document.querySelectorAll(".randomPizzaContainer");
+//moved two variables dx & newwidth outside the for loop because their values do not change
   var dx = determineDx(pizzaContain[0], size);
   var newwidth = (pizzaContain[0].offsetWidth + dx) + 'px';
-  //does this make that much of a difference  len = document.querySelectorAll(".randomPizzaContainer").length
     for (var i = 0; i < pizzaContain.length; i++) {
       pizzaContain[i].style.width = newwidth;
     }
   }
-
   changePizzaSizes(size);
 
   // User Timing API is awesome
@@ -473,11 +472,9 @@ function changePizzaSizes(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-//var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
   var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
-
 }
 
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
@@ -503,18 +500,16 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-
-//*****change this function
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var items = document.querySelectorAll('.mover');
-  var scrollCalc =Math.sin(document.body.scrollTop / 1250)
+  var items = document.querySelectorAll('.mover'); //moved var items outside for loop as this does not change and does not belong in the for loop
+  var scrollCalc = Math.sin(document.body.scrollTop / 1250) //created var scrollCalc to replace function that did not need to be in the for loop
   for (var i = 0; i < items.length; i++) {
     var phase = (scrollCalc + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  }
+}
 
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
