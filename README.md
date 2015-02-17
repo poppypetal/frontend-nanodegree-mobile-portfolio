@@ -1,5 +1,14 @@
 ## Website Performance Optimization portfolio project
 
+main.js modifications:
+
+For the changePizzaSizes function, I created a new var pizzaContain to replace all instances of document.querySelectorAll(".randomPizzaContainer") since the same portion of code was used in 4 instances within the function. Then I replaced document.querrySelectorAll(".randomPizzaContainer") with pizza contain.  I also moved the two variables dx & newwidth outside the for loop because their values do not change and do not need to be calculated with every iteration of the for loop.
+
+For the updatePositions function, I moved var items = document.querySelectorAll('.mover'); outside the for loop as this does not calculation change during each iteration of the for loop and speeds up the FPS.  I also created a new variable scrollCalc to replace the Math.sin(document.body.scrollTop / 1250) calculation to speed up the FPS--this calculation did not need to be located in the for loop.
+
+
+
+
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 To get started, check out the repository, inspect the code,
